@@ -1,0 +1,16 @@
+Host vr
+	User root
+	HostName aramis.vonrudorff.de
+Host basil
+	User root
+	HostName portos.vonrudorff.de
+Host ucl
+	User grudorff
+	HostName scutum.phys.ucl.ac.uk
+Host ucls
+	User ucapgfv
+	HostName socrates.ucl.ac.uk
+Host ucl2
+	User grudorff
+	HostName scutum.phys.ucl.ac.uk
+	ProxyCommand ssh -q -A -x ucls -W %h:22
