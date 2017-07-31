@@ -13,3 +13,4 @@ setterm -blength 0 &> /dev/null
 
 # Read SSH config
 alias ssh='ssh -F "$BASEDIR/ssh-config"'
+alias scp='scp -F "$BASEDIR/ssh-config"'
