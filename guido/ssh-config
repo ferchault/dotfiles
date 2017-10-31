@@ -14,3 +14,6 @@ Host ucl2
 	User grudorff
 	HostName scutum.phys.ucl.ac.uk
 	ProxyCommand ssh -q -A -x ucls -W %h:22
+Host scicore
+	User rudorff
+	Hostname login2.scicore.unibas.ch
