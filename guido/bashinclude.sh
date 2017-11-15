@@ -17,3 +17,14 @@ alias scp='scp -F "$BASEDIR/ssh-config"'
 
 # Tunnel UniBas
 alias boring='ssh -f -T -N -R 20000:localhost:24800 basil;ssh -f -N -L 3587:basil.vonrudorff.de:587 basil; ssh -f -N -L 4587:smtp.gmail.com:587 basil'
+
+function automount {
+	for driveletter in $(find /mnt/ -maxdepth 1 | grep '/drive-' | sed 's/.*-//')
+	do
+		mount | grep "/mnt/drive-$driveletter" > /dev/null
+		if [ $? -eq 1 ]
+		then
+			sudo mount -t drvfs "$driveletter:" "/mnt/drive-$driveletter"
+		fi
+	done
+}
