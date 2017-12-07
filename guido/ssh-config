@@ -17,3 +17,6 @@ Host ucl2
 Host scicore
 	User rudorff
 	Hostname login2.scicore.unibas.ch
+Host alchemy
+	User vonrudorff
+	Hostname pc-alchemy.chemie.unibas.ch
