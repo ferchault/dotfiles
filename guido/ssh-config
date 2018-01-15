@@ -16,10 +16,11 @@ Host ucl2
 	ProxyCommand ssh -q -A -x ucls -W %h:22
 Host scicore
 	User rudorff
-	Hostname login2.scicore.unibas.ch
+	Hostname login20.scicore.unibas.ch
 Host alchemy
 	User vonrudorff
 	Hostname pc-alchemy.chemie.unibas.ch
 Host chemspacelab
 	User root
 	Hostname 31972.hostserv.eu
+	Port 222
