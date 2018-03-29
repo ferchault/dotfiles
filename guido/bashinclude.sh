@@ -30,3 +30,25 @@ function automount {
 	done
 }
 
+function gitpoint {
+	# check for dirty repositories
+	BASEPATH=$(pwd)
+	for i in $WORKDIRPATH/*
+	do
+		cd "$i"
+		NUMLINES=$(git status --porcelain | wc -l)
+		if [ "$NUMLINES" -ne "0" ]
+		then
+			cd $i
+			git status
+			return
+		fi
+	done
+
+	# push current commits
+	for i in $WORKDIRPATH/*
+	do	
+		cd "$i"
+		git push
+	done	
+}
