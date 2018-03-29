@@ -49,6 +49,7 @@ function gitpoint {
 	for i in $WORKDIRPATH/*
 	do	
 		cd "$i"
+		git pull
 		git push
 	done	
 }
