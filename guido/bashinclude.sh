@@ -7,6 +7,7 @@ PS2="\u@\h:\w> "
 
 # Pretty git log
 alias gitlog="git log --oneline --abbrev-commit --all --graph --decorate --color" 
+alias cdw="cd $WORKDIRPATH"
 
 # Disable bell
 setterm -blength 0 &> /dev/null
@@ -16,7 +17,7 @@ alias ssh='ssh -F "$BASEDIR/ssh-config"'
 alias scp='scp -F "$BASEDIR/ssh-config"'
 
 # Tunnel UniBas
-alias boring='autossh -f -T -N -R 20000:localhost:24800 basil;autossh -f -N -L 3587:basil.vonrudorff.de:587 basil; autossh -f -N -L 4587:smtp.gmail.com:587 basil'
+alias boring='ssh -f -T -N -R 20000:localhost:24800 basil;ssh -f -N -L 3587:basil.vonrudorff.de:587 basil; ssh -f -N -L 4587:smtp.gmail.com:587 basil'
 
 function automount {
 	for driveletter in $(find /mnt/ -maxdepth 1 | grep '/drive-' | sed 's/.*-//')
@@ -28,3 +29,4 @@ function automount {
 		fi
 	done
 }
+
