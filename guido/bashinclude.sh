@@ -11,6 +11,8 @@ alias cdw="cd $WORKDIRPATH"
 
 # Disable bell
 setterm -blength 0 &> /dev/null
+grep 'set bell-style none' ~/.inputrc &> /dev/null || echo 'set bell-style none' >> ~/.inputrc
+grep 'set visualbell' ~/.vimrc &> /dev/null || echo 'set visualbell' >> ~/.vimrc
 
 # Read SSH config
 alias ssh='ssh -F "$BASEDIR/ssh-config"'
