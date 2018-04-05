@@ -50,6 +50,7 @@ function gitpoint {
 	# push current commits
 	for i in $WORKDIRPATH/*
 	do	
+		echo "Updating repository $i"
 		cd "$i"
 		git pull
 		git push
