@@ -24,3 +24,6 @@ Host chemspacelab
 	User root
 	Hostname 31972.hostserv.eu
 	Port 222
+Host cscs
+	User grudorff
+	Hostname ela.cscs.ch
