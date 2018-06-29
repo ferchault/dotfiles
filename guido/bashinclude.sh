@@ -3,6 +3,7 @@ BASEDIR=$(dirname $(realpath "$BASH_SOURCE" ))
 
 # Prompt
 PS1='\[\e[37m\]$HCHAIN \[\e[32m\]\[\e[31;1m\]\h\[\e[37m\]:\[\e[32m\]\w \$\[\e[0m\] ' 
+PS1="\[\e[0;32m\]\t \[\e[0;33m\]\w \[\e[0;37m\]\\n\[\e[0;31m\]\h \[\e[0;37m\]\$ \[\e[0m\]"
 PS2="\u@\h:\w> "
 
 # Pretty git log
@@ -55,4 +56,13 @@ function gitpoint {
 		git pull
 		git push
 	done	
+}
+
+function tarscp {
+	if [ "$#" -ne 3 ]
+	then
+		echo "Usage: tarscp HOST BASEDIR FILELIST"
+	else
+		ssh $1 "cd $2 && tar cf - -T $3" | pv | tar xf - &> /dev/null
+	fi
 }
