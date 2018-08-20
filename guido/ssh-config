@@ -27,3 +27,12 @@ Host chemspacelab
 Host cscs
 	User grudorff
 	Hostname ela.cscs.ch
+Host avl
+	User grudorff
+	Hostname pc-avl03.chemie.unibas.ch
+Host shelf
+	User grudorff
+	Hostname pc-avl25.chemie.unibas.ch
+Host ubas
+	User rudorff
+	Hostname login2.bc2.unibas.ch
