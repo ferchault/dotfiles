@@ -1,4 +1,4 @@
-#!/bin/bash
+	#!/bin/bash
 BASEDIR=$(dirname $(realpath "$BASH_SOURCE" ))
 
 # Prompt
@@ -21,6 +21,7 @@ alias scp='scp -F "$BASEDIR/ssh-config"'
 
 # Tunnel UniBas
 alias boring='ssh -f -T -N -R 20000:localhost:24800 basil;ssh -f -N -L 3587:basil.vonrudorff.de:587 basil; ssh -f -N -L 4587:smtp.gmail.com:587 basil'
+alias ubasproxy='ssh -L 8999:localhost:8002 ubas -t ssh -D 8002 grudorff@pc-avl03.chemie.unibas.ch'
 
 function automount {
 	for driveletter in $(find /mnt/ -maxdepth 1 | grep '/drive-' | sed 's/.*-//')
