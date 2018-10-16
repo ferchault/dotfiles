@@ -16,7 +16,7 @@ Host ucl2
 	ProxyCommand ssh -q -A -x ucls -W %h:22
 Host scicore
 	User rudorff
-	Hostname login20.scicore.unibas.ch
+	Hostname login2.bc2.unibas.ch
 Host alchemy
 	User vonrudorff
 	Hostname pc-alchemy.chemie.unibas.ch
@@ -30,6 +30,10 @@ Host cscs
 Host avl
 	User grudorff
 	Hostname pc-avl03.chemie.unibas.ch
+Host avls
+	User grudorff
+	Hostname pc-avl03.chemie.unibas.ch
+	ProxyCommand ssh -F /mnt/c/Users/guido/workcopies/dotfiles/guido/ssh-config -q -A -x scicore -W %h:22
 Host shelf
 	User grudorff
 	Hostname pc-avl25.chemie.unibas.ch
