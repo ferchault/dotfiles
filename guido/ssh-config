@@ -30,13 +30,18 @@ Host cscs
 Host avl
 	User grudorff
 	Hostname pc-avl03.chemie.unibas.ch
+	Port 222
 Host avls
 	User grudorff
-	Hostname pc-avl03.chemie.unibas.ch
-	ProxyCommand ssh -F /mnt/c/Users/guido/workcopies/dotfiles/guido/ssh-config -q -A -x scicore -W %h:22
+	Port 222
+	Hostname avl-shelf
+	ProxyCommand ssh -F /mnt/c/Users/guido/workcopies/dotfiles/guido/ssh-config -q -A -x scicore -W %h:%p
 Host shelf
 	User grudorff
 	Hostname pc-avl25.chemie.unibas.ch
 Host ubas
 	User rudorff
 	Hostname login2.bc2.unibas.ch
+Host redis
+	User vonrudorff
+	Hostname pc-avl49.chemie.unibas.ch
