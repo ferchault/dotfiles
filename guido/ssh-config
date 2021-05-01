@@ -1,6 +1,12 @@
 Host lrl
 	User root
 	HostName leruli.com
+Host vie
+	User guido
+	HostName be.mpi.univie.ac.at
+Host vsc
+	User guido
+	HostName vsc4.vsc.ac.at
 Host vr
 	User root
 	HostName aramis.vonrudorff.de
@@ -19,25 +25,37 @@ Host ucl2
 	ProxyCommand ssh -q -A -x ucls -W %h:22
 Host scicore
 	User rudorff
-	Hostname login2.bc2.unibas.ch
+	IdentityFile  ~/.ssh/scicore
+	Hostname login.scicore.unibas.ch
 Host alchemy
 	User vonrudorff
 	Hostname pc-alchemy.chemie.unibas.ch
 Host chemspacelab
-	User root
-	Hostname 31972.hostserv.eu
-	Port 222
+	User ec2-user
+	IdentityFile ~/.ssh/csl-web.pem
+	Hostname 3.23.180.14
 Host cscs
 	User grudorff
 	Hostname ela.cscs.ch
 Host avl
 	User grudorff
 	Hostname pc-avl03.chemie.unibas.ch
-	Port 222
+	Port 22
 Host avls
 	User grudorff
-	Port 222
-	Hostname avl-shelf
+	Hostname pc-avl03.chemie.unibas.ch
+	ProxyCommand ssh -F /mnt/c/Users/guido/workcopies/dotfiles/guido/ssh-config -q -A -x scicore -W %h:%p
+Host avlj
+	User grudorff
+	Hostname pc-avl03.chemie.unibas.ch
+	ProxyJump scicore
+Host alchemyj
+	User vonrudorff
+	Hostname pc-alchemy.chemie.unibas.ch
+	ProxyJump avlj
+Host alchemys
+	User vonrudorff
+	Hostname pc-alchemy.chemie.unibas.ch
 	ProxyCommand ssh -F /mnt/c/Users/guido/workcopies/dotfiles/guido/ssh-config -q -A -x scicore -W %h:%p
 Host shelf
 	User grudorff
@@ -48,3 +66,18 @@ Host ubas
 Host redis
 	User vonrudorff
 	Hostname pc-avl49.chemie.unibas.ch
+Host redisj
+	User vonrudorff
+	Hostname pc-avl49.chemie.unibas.ch
+	ProxyJump scicore
+Host heini
+	User guido
+	Hostname pc-avl50.chemie.unibas.ch
+Host fatnode
+	User vonrudorff
+	Hostname 192.168.200.145
+	ProxyJump alchemy
+Host fatnode2
+	User vonrudorff
+	Hostname 192.168.200.145
+	ProxyCommand C:\Windows\System32\OpenSSH\ssh.exe -W %h:%p vonrudorff@pc-alchemy.chemie.unibas.ch

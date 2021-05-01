@@ -20,7 +20,7 @@ alias ssh='ssh -F "$BASEDIR/ssh-config"'
 alias scp='scp -F "$BASEDIR/ssh-config"'
 
 # Tunnel UniBas
-alias boring='ssh -f -T -N -R 20000:localhost:24800 basil;ssh -f -N -L 3587:basil.vonrudorff.de:587 basil; ssh -f -N -L 4587:smtp.gmail.com:587 basil'
+alias boring='ssh -f -T -N -R 20000:localhost:24800 basil;ssh -f -N -L 3587:basil.vonrudorff.de:587 basil; ssh -f -N -L 4587:smtp.gmail.com:587 basil;ssh -f -N -L 4465:mail.univie.ac.at:465 basil'
 alias ubasproxy='ssh -L 8999:localhost:8002 ubas -t ssh -D 8002 grudorff@pc-avl03.chemie.unibas.ch'
 
 function automount {
@@ -66,4 +66,7 @@ function tarscp {
 	else
 		ssh $1 "cd $2 && tar cf - -T $3" | pv | tar xf - &> /dev/null
 	fi
+}
+function tablack {
+	black -l 120 $1 && sed -e "s/    /\t/g"  -i $1
 }
