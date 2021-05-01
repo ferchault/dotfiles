@@ -1,3 +1,6 @@
+Host lrl
+	User root
+	HostName leruli.com
 Host vr
 	User root
 	HostName aramis.vonrudorff.de
